@@ -1,0 +1,70 @@
+config:
+
+  Auto-Reset: true
+
+  Languaje: En
+
+  Message-Welcome: true
+
+  Leave-message: true
+
+  Join-message: true
+
+  Join-messageall: true
+
+  Join-particle: true
+
+  First-join: true
+
+  Join-Sound: true
+
+  Death: true
+
+  Welcome-screen-message: "Welcome to my server"
+
+  Join-messageall-message: " has joined"
+
+  Welcome-screen-sub-message: "%player%"
+
+  First-join-message: " just joined this server for the first time!"
+
+  Join-particle-select: FLAME
+
+  Join-sound-select: ENTITY_WITHER_SPAWN
+
+  Join-player-message: "&a%player% join in the server"
+
+  Join-chat-message:
+    - "&m                     "
+    - "&2&lWelcome to Server %player%"
+    - "&c&lDiscord: Your Discord Link"
+    - "&c&lStore: Your Store link "
+    - "&m         "
+
+  Death-message: "%player% &5Sold his soul to a Creeper"
+
+  Leave-chat-message: "&c%player% leave the server"
+
+#--------------------System Messages----------------------#
+
+  version: "The plugin version Is:  "
+
+  reload: ": The plugin has reloaded successfully"
+
+  help: "The plugin commands are: "
+
+  error: ": This Command does not exist!"
+
+  help2: "Use /welcomer help for help XD"
+
+  available: "There is a new version available. "
+
+  download: "You can download it at: "
+
+
+#You can set the Languaje: Es = Español - En = English - Ch = 中國人 - Ru = русский - Fr = français"#
+#"You can set off the auto-reset to avoid losing your modifications"#
+#"You can set colors with the & sign and assign numeric value colors"#
+#"join in this link for more: https://minecraft.tools/en/color-code.php"#
+#"The %player% identific the player name"#
+#"Use the command /welcomer reload to reload"*\#"
