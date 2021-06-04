@@ -1,9 +1,5 @@
 config:
 
-  Auto-Reset: true
-
-  Languaje: En
-
   Message-Welcome: true
 
   Leave-message: true
