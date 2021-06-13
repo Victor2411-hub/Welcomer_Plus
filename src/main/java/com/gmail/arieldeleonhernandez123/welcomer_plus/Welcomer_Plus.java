@@ -3,6 +3,8 @@ package com.gmail.arieldeleonhernandez123.welcomer_plus;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,6 +23,7 @@ public final class Welcomer_Plus extends JavaPlugin {
     PluginDescriptionFile pdffile = getDescription();
     String Version = pdffile.getVersion();
     List<String> author = pdffile.getAuthors();
+    FileConfiguration config = getConfig();
     //--------------------------Variables--------------------------\\
 
     @Override
@@ -30,7 +33,8 @@ public final class Welcomer_Plus extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(ChatColor.WHITE + name + ": The plugin has been activates " + ChatColor.BLUE + Version);
         Bukkit.getConsoleSender().sendMessage(ChatColor.WHITE + "                 By: " + ChatColor.MAGIC + author);
         Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE + "<-------------------------------------------------------------------->");
-        ConfigManager.obtenerconfig();
+        getConfig().options().copyDefaults(true);
+        saveDefaultConfig();
         updateChecker();
         registerEvents();
         resgistrarcomandos();

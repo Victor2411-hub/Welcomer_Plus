@@ -38,7 +38,7 @@ public class ComandoPrincipal implements CommandExecutor {
         } else {
             Player jugador = (Player) sender;
             if (args.length > 0) {
-                YamlConfiguration config = ConfigManager.obtenerconfig();
+                FileConfiguration config = plugin.getConfig();
                 String version = config.getString("config.version");
                 if (args[0].equalsIgnoreCase("version")) {
                     jugador.sendMessage(ChatColor.BLUE + plugin.name + ChatColor.WHITE + version + ChatColor.YELLOW + plugin.Version);
@@ -86,7 +86,8 @@ public class ComandoPrincipal implements CommandExecutor {
                 }
                 else if (args[0].equalsIgnoreCase("reload")) {
                     String reload = config.getString("config.reload");
-                    ConfigManager.obtenerconfig().reload();
+                    plugin.saveConfig();
+                    plugin.reloadConfig();
                     jugador.sendMessage(ChatColor.BLUE + plugin.name + ChatColor.GREEN + reload);
                     return true;
                 }

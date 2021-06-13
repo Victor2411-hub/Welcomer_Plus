@@ -9,6 +9,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import java.io.FileReader;
+
 public class Quit implements Listener {
     private final Welcomer_Plus plugin;
 
@@ -19,7 +21,7 @@ public class Quit implements Listener {
     public void Alsalir(PlayerQuitEvent event) {
         //--------------------------Necesario--------------------------\\
         Player jugador = event.getPlayer();
-        YamlConfiguration config = ConfigManager.obtenerconfig();
+        FileConfiguration config = plugin.getConfig();
         //--------------------------Necesario--------------------------\\
 
         //--------------------------Variables--------------------------\\

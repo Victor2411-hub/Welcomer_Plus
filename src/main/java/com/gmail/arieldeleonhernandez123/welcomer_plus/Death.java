@@ -20,7 +20,7 @@ public class Death implements Listener {
     public void Almorir (PlayerDeathEvent event){
         //--------------------------Necesario--------------------------\\
         Player jugador = event.getEntity();
-        YamlConfiguration config = ConfigManager.obtenerconfig();
+        FileConfiguration config = plugin.getConfig();
         //--------------------------Necesario--------------------------\\
 
         //--------------------------Variables--------------------------\\

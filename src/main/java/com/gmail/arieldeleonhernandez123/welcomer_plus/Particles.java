@@ -3,6 +3,7 @@ package com.gmail.arieldeleonhernandez123.welcomer_plus;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -107,15 +108,15 @@ public class Particles implements Listener {
         if (event.getCurrentItem() != null && event.getSlot() == event.getRawSlot()) {
             Player jugador = (Player) event.getWhoClicked();
             event.setCancelled(true);
-            YamlConfiguration config = ConfigManager.obtenerconfig();
+            FileConfiguration config = plugin.getConfig();
             String paht ="config.Join-particle";
             switch (event.getSlot()) {
                 case 20:
                     if (config.getString(paht).equals("true")) {
                         config.set("config.Join-particle-select", "DRAGON_BREATH");
                         jugador.sendMessage(ChatColor.YELLOW + "Join Particles set has DRAGON BREAHT");
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                     }
                     return;
 
@@ -123,8 +124,8 @@ public class Particles implements Listener {
                     if (config.getString(paht).equals("true")) {
                         config.set("config.Join-particle-select", "EXPLOSION_HUGE");
                         jugador.sendMessage(ChatColor.YELLOW + "Join Particles set has Explotion");
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                     }
                     return;
 
@@ -132,8 +133,8 @@ public class Particles implements Listener {
                     if (config.getString(paht).equals("true")) {
                         config.set("config.Join-particle-select", "FIRE");
                         jugador.sendMessage(ChatColor.YELLOW + "Join Particles set has FIRE");
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                     }
                     return;
 
@@ -141,8 +142,8 @@ public class Particles implements Listener {
                     if (config.getString(paht).equals("true")) {
                         config.set("config.Join-particle-select", "CRIT");
                         jugador.sendMessage(ChatColor.YELLOW + "Join Particles set has CRIT");
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                     }
                     return;
 
@@ -150,8 +151,8 @@ public class Particles implements Listener {
                     if (config.getString(paht).equals("true")) {
                         config.set("config.Join-particle-select", "BUBBLE_COLUMN_UP");
                         jugador.sendMessage(ChatColor.YELLOW + "Join Particles set has bubble column up");
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                     }
                     return;
             }

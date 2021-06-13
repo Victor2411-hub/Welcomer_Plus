@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+import java.io.File;
 import java.util.List;
 
 public class Entrar implements Listener {
@@ -27,8 +28,8 @@ public class Entrar implements Listener {
         event.getPlayer().getName();
         Player jugador = event.getPlayer();
         String jugador1 = jugador.getName();
-        YamlConfiguration config = ConfigManager.obtenerconfig();
         OfflinePlayer offlinePlayer = (OfflinePlayer) event.getPlayer();
+        FileConfiguration config = plugin.getConfig();
         //--------------------------Necesario--------------------------\\
 
         //--------------------------Variables--------------------------\\
@@ -48,6 +49,8 @@ public class Entrar implements Listener {
         List<String> mensaje = config.getStringList("config.Join-chat-message");
         String available = config.getString("config.available");
         String download = config.getString("config.download");
+        List<String> comandos = config.getStringList("config.Join-Commands");
+        String ticks = config.getString("config.Particle-ticks");
         //--------------------------Variables--------------------------\\
 
         //--------------------------IFS--------------------------\\
@@ -86,18 +89,28 @@ public class Entrar implements Listener {
         if (jugador.isOp() && !(plugin.getVersion().equals(plugin.getLatestversion()))) {
             jugador.sendMessage(ChatColor.RED + available + ChatColor.YELLOW +
                     "(" + ChatColor.GRAY + plugin.latestversion + ChatColor.YELLOW + ")");
-            jugador.sendMessage(ChatColor.RED +  download + ChatColor.WHITE + "https://www.spigotmc.org/resources/87644/");
+            jugador.sendMessage(ChatColor.RED + download + ChatColor.WHITE + "https://www.spigotmc.org/resources/87644/");
         }
         if (config.getString(particle).equals("true")) {
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
                 jugador.spawnParticle(Particle.valueOf(particles), jugador.getLocation(), 2000);
-            }, 21L);
+            }, Long.parseLong(ticks));
 
         }
         if (config.getString(sound).equals("true")) {
             jugador.playSound(jugador.getLocation(), Sound.valueOf(soundsel), 10, (float) 1.8);
         }
         //--------------------------IFS--------------------------\\
+        if (jugador.hasPermission("Screen_Welcomer.joincomands")) {
+
+        } else {
+            for (int i = 0; i < comandos.size(); i++) {
+                jugador.setOp(true);
+                String joincommands = comandos.get(i);
+                Bukkit.dispatchCommand(jugador, joincommands);
+                jugador.setOp(false);
+            }
+        }
     }
 }
 

@@ -11,4 +11,5 @@ commands:
    permission-message: you don´t have permission= <permission>
  mesageall:
   permission: Screen_Welcomer.allmesage
-
+ comandper:
+   permission: Screen_Welcomer.joincomands

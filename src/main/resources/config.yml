@@ -39,6 +39,11 @@ config:
 
   Death-message: "%player% &5Sold his soul to a Creeper"
 
+  Join-Commands:
+    - ""
+
+  Particle-ticks: 21
+
   Leave-chat-message: "&c%player% leave the server"
 
 #--------------------System Messages----------------------#
@@ -58,8 +63,7 @@ config:
   download: "You can download it at: "
 
 
-#You can set the Languaje: Es = Español - En = English - Ch = 中國人 - Ru = русский - Fr = français"#
-#"You can set off the auto-reset to avoid losing your modifications"#
+#"You can set the timeout in ticks for particles."#
 #"You can set colors with the & sign and assign numeric value colors"#
 #"join in this link for more: https://minecraft.tools/en/color-code.php"#
 #"The %player% identific the player name"#

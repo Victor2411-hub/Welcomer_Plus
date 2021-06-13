@@ -4,7 +4,6 @@ import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -107,7 +106,7 @@ public class Inventario implements Listener {
         if (event.getCurrentItem() != null && event.getSlot() == event.getRawSlot()) {
             Player jugador = (Player) event.getWhoClicked();
             event.setCancelled(true);
-            YamlConfiguration config = ConfigManager.obtenerconfig();
+            FileConfiguration config = plugin.getConfig();
             String path = "config.Message-Welcome";
             String path1 = "config.Join-message";
             String path2 = "config.Leave-message";
@@ -126,8 +125,8 @@ public class Inventario implements Listener {
                         item.setItemMeta(meta);
                         config.set("config.Message-Welcome", false);
                         jugador.sendMessage(ChatColor.RED+"Message-Welcome is false");
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                     }else if (config.getString(path).equals("false")){
                         List<String> lore2 = new ArrayList<String>();
                         ItemStack item = event.getCurrentItem();
@@ -137,8 +136,8 @@ public class Inventario implements Listener {
                         meta.setLore(lore2);
                         item.setItemMeta(meta);
                         config.set("config.Message-Welcome", true);
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                         jugador.sendMessage(ChatColor.GREEN+"Message-Welcome is true");
                     }
 
@@ -157,8 +156,8 @@ public class Inventario implements Listener {
                         item.setItemMeta(meta);
                         config.set("config.Join-message", false);
                         jugador.sendMessage(ChatColor.RED+"Join-message is false");
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                     }else if (config.getString(path1).equals("false")){
                         List<String> lore2 = new ArrayList<String>();
                         ItemStack item = event.getCurrentItem();
@@ -168,8 +167,8 @@ public class Inventario implements Listener {
                         meta.setLore(lore2);
                         item.setItemMeta(meta);
                         config.set("config.Join-message", true);
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                         jugador.sendMessage(ChatColor.GREEN+"Join-message is true");
                     }
 
@@ -188,8 +187,8 @@ public class Inventario implements Listener {
                         item.setItemMeta(meta);
                         config.set("config.Leave-message", false);
                         jugador.sendMessage(ChatColor.RED+"Leave-message is false");
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                     }else if (config.getString(path2).equals("false")){
                         List<String> lore2 = new ArrayList<String>();
                         ItemStack item = event.getCurrentItem();
@@ -199,8 +198,8 @@ public class Inventario implements Listener {
                         meta.setLore(lore2);
                         item.setItemMeta(meta);
                         config.set("config.Leave-message", true);
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                         jugador.sendMessage(ChatColor.GREEN+"Leave-message is true");
                     }
 
@@ -218,8 +217,8 @@ public class Inventario implements Listener {
                         item.setItemMeta(meta);
                         config.set("config.Death", false);
                         jugador.sendMessage(ChatColor.RED+"Death-message is false");
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();;
                     }else if (config.getString(path3).equals("false")){
                         List<String> lore2 = new ArrayList<String>();
                         ItemStack item = event.getCurrentItem();
@@ -229,8 +228,8 @@ public class Inventario implements Listener {
                         meta.setLore(lore2);
                         item.setItemMeta(meta);
                         config.set("config.Death", true);
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                         jugador.sendMessage(ChatColor.GREEN+"Death-message is true");
                     }
                     return;
@@ -247,8 +246,8 @@ public class Inventario implements Listener {
                         item.setItemMeta(meta);
                         config.set("config.Join-particle", false);
                         jugador.sendMessage(ChatColor.RED+"Message-Welcome is false");
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                     }else if (config.getString(path4).equals("false")){
                         List<String> lore2 = new ArrayList<String>();
                         ItemStack item = event.getCurrentItem();
@@ -258,8 +257,8 @@ public class Inventario implements Listener {
                         meta.setLore(lore2);
                         item.setItemMeta(meta);
                         config.set("config.Join-particle", true);
-                        ConfigManager.obtenerconfig().save();
-                        ConfigManager.obtenerconfig().reload();
+                        plugin.saveConfig();
+                        plugin.reloadConfig();
                         jugador.sendMessage(ChatColor.GREEN+"Join-particle is true");
                     }
                     return;
