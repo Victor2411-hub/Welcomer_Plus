@@ -46,11 +46,10 @@ config:
 
   Leave-chat-message: "&c%player% leave the server"
 
-#--------------------System Messages----------------------#
+  #--------------------System Messages----------------------#
 
   version: "The plugin version Is:  "
 
-  reload: ": The plugin has reloaded successfully"
 
   help: "The plugin commands are: "
 
@@ -68,3 +67,6 @@ config:
 #"join in this link for more: https://minecraft.tools/en/color-code.php"#
 #"The %player% identific the player name"#
 #"Use the command /welcomer reload to reload"*\#"
+#puta
+
+

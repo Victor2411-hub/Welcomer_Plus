@@ -1,5 +1,6 @@
 package com.gmail.arieldeleonhernandez123.welcomer_plus;
 
+import de.leonhard.storage.Yaml;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
@@ -9,7 +10,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-
+import java.nio.file.Files;
 
 
 public class ComandoPrincipal implements CommandExecutor {
@@ -38,7 +39,9 @@ public class ComandoPrincipal implements CommandExecutor {
         } else {
             Player jugador = (Player) sender;
             if (args.length > 0) {
-                FileConfiguration config = plugin.getConfig();
+                Yaml config = Welcomer_Plus.getInstance().getconfig();
+
+
                 String version = config.getString("config.version");
                 if (args[0].equalsIgnoreCase("version")) {
                     jugador.sendMessage(ChatColor.BLUE + plugin.name + ChatColor.WHITE + version + ChatColor.YELLOW + plugin.Version);
@@ -67,39 +70,17 @@ public class ComandoPrincipal implements CommandExecutor {
 
                         }
 
-
-
-
                     }
                     return true;
 
-                }
-                else if (args[0].equalsIgnoreCase("gui")){
-                    Inventario inv =new Inventario(plugin);
-                    inv.crearInventario(jugador);
-                    return true;
-                }
-                else if (args[0].equalsIgnoreCase("particles")) {
-                    Particles inv = new Particles(plugin);
-                    inv.crearInventario(jugador);
-                    return true;
-                }
-                else if (args[0].equalsIgnoreCase("reload")) {
-                    String reload = config.getString("config.reload");
-                    plugin.saveConfig();
-                    plugin.reloadConfig();
-                    jugador.sendMessage(ChatColor.BLUE + plugin.name + ChatColor.GREEN + reload);
-                    return true;
                 }
                 else if (args[0].equalsIgnoreCase("help")) {
                     String help = config.getString("config.help");
                     jugador.sendMessage((ChatColor.BLUE + plugin.name + ChatColor.WHITE + help));
                     jugador.sendMessage((ChatColor.WHITE + "1./welcomer\n" +
                             "2./welcomer version\n" +
-                            "3./welcomer reload\n" +
-                            "4./welcomer gui\n" +
-                            "5./welcomer particles\n"+
-                            "6./welcomer msg"));
+                            "3./welcomer help\n"+
+                            "4./welcomer msg"));
 
                     return true;
 

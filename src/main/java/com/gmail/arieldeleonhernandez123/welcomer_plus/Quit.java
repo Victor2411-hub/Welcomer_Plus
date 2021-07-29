@@ -1,5 +1,6 @@
 package com.gmail.arieldeleonhernandez123.welcomer_plus;
 
+import de.leonhard.storage.Yaml;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -21,7 +22,8 @@ public class Quit implements Listener {
     public void Alsalir(PlayerQuitEvent event) {
         //--------------------------Necesario--------------------------\\
         Player jugador = event.getPlayer();
-        FileConfiguration config = plugin.getConfig();
+        Yaml config = Welcomer_Plus.getInstance().getconfig();
+
         //--------------------------Necesario--------------------------\\
 
         //--------------------------Variables--------------------------\\

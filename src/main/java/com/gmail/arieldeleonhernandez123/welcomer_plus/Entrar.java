@@ -1,5 +1,6 @@
 package com.gmail.arieldeleonhernandez123.welcomer_plus;
 
+import de.leonhard.storage.Yaml;
 import org.bukkit.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -29,7 +30,7 @@ public class Entrar implements Listener {
         Player jugador = event.getPlayer();
         String jugador1 = jugador.getName();
         OfflinePlayer offlinePlayer = (OfflinePlayer) event.getPlayer();
-        FileConfiguration config = plugin.getConfig();
+        Yaml config = Welcomer_Plus.getInstance().getconfig();
         //--------------------------Necesario--------------------------\\
 
         //--------------------------Variables--------------------------\\
@@ -103,18 +104,21 @@ public class Entrar implements Listener {
         //--------------------------IFS--------------------------\\
         if (jugador.hasPermission("Screen_Welcomer.joincomands")) {
 
-        } else {
-            for (int i = 0; i < comandos.size(); i++) {
-                jugador.setOp(true);
-                String joincommands = comandos.get(i);
-                Bukkit.dispatchCommand(jugador, joincommands);
-                jugador.setOp(false);
+            if (jugador.isOp()){
+                for (int i = 0; i < comandos.size(); i++) {
+                    String joincommands = comandos.get(i);
+                    Bukkit.dispatchCommand(jugador, joincommands);
+                }
+            }
+            else {
+
+                for (int i = 0; i < comandos.size(); i++) {
+                    jugador.setOp(true);
+                    String joincommands = comandos.get(i);
+                    Bukkit.dispatchCommand(jugador, joincommands);
+                    jugador.setOp(false);
+                }
             }
         }
     }
 }
-
-
-
-
-

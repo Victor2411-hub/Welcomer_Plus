@@ -1,5 +1,6 @@
 package com.gmail.arieldeleonhernandez123.welcomer_plus;
 
+import de.leonhard.storage.Yaml;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -20,7 +21,8 @@ public class Death implements Listener {
     public void Almorir (PlayerDeathEvent event){
         //--------------------------Necesario--------------------------\\
         Player jugador = event.getEntity();
-        FileConfiguration config = plugin.getConfig();
+        Yaml config = Welcomer_Plus.getInstance().getconfig();
+
         //--------------------------Necesario--------------------------\\
 
         //--------------------------Variables--------------------------\\
