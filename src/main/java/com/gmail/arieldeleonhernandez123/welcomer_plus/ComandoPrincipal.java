@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-import java.util.Iterator;
+
 
 public class ComandoPrincipal implements CommandExecutor {
     private final Welcomer_Plus plugin;
@@ -20,8 +20,8 @@ public class ComandoPrincipal implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command comando, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE + this.plugin.name + ChatColor.RED + ": You cannot run this command from the console");
-            return false;
+                Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE + this.plugin.name + ChatColor.RED + ": You cannot run this command from the console");
+                return false;
         } else {
             Player jugador = (Player)sender;
             String version;

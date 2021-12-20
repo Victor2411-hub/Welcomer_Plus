@@ -1,5 +1,5 @@
 name: Welcomer_Plus
-version: 2.4.3
+version: 2.4.4
 main: com.gmail.arieldeleonhernandez123.welcomer_plus.Welcomer_Plus
 api-version: 1.15
 authors: [ Elcheems, Divios ]
@@ -7,9 +7,14 @@ commands:
  welcomer:
    description: multiples opciones
    permission: Screen_Welcomer.welcomer
+   default: not op
    usage: /welcomer
    permission-message: you don´t have permission= <permission>
-  comandper:
-   permission: Screen_Welcomer.joincomands
-  mesageall:
-   permission: Screen_Welcomer.allmesage
+
+permissions:
+  Screen_Welcomer.joincomands:
+    description: permisos para el comando join
+
+  Screen_Welcomer.allmesage:
+    description: none
+    permission-message: You don't have <permission>

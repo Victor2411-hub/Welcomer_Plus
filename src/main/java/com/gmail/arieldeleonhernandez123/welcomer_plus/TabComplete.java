@@ -2,8 +2,6 @@ package com.gmail.arieldeleonhernandez123.welcomer_plus;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
