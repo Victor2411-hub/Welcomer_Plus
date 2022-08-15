@@ -1,0 +1,48 @@
+config:
+
+  Welcome-screen-message: "Bienvenue sur le serveur"
+
+  Join-messageall-message: "Vous avez rejoint le serveur"
+
+  Welcome-screen-sub-message: "%player%"
+
+  First-join-message: "Vous avez rejoint le serveur pour la première fois"
+
+  Join-player-message: "&a%player% a rejoint le serveur"
+
+  Join-chat-message:
+    - "&m"
+    - "&2&lBienvenue sur le serveur %player%"
+    - "&c&lDiscord: Votre lien Discord"
+    - "&c&lStore: Lien vers votre boutique"
+    - "&m"
+
+  Death-message : "%player% &5Sold A vendu son âme à un creeper"
+
+  Leave-chat-message: "&c%player% je quitte le serveur"
+
+  #--------------------Messages système----------------------#
+
+  version: "La version du plug-in est: "
+
+  error: " : Cette commande n'existe pas !"
+
+  help: "Afficher toutes les commandes"
+
+  help1: "Afficher la version du plug-in"
+
+  help2: "Utilisez /welcomer help pour obtenir de l'aide"
+
+  help3: "Utiliser pour recharger le plugin"
+
+  available: "Une nouvelle version est disponible."
+
+  download: "Vous pouvez le télécharger sur: "
+
+  reload: "Le plugin a été rechargé"
+
+#"Vous pouvez définir le délai d'attente en ticks pour les particules."#
+#"Vous pouvez définir des couleurs avec l'esperluette et attribuer des couleurs aux valeurs numériques"#
+#"Rejoignez ce lien pour plus d'informations : https://minecraft.tools/en/color-code.php"#
+#"Le %player% identifie le nom du joueur"#
+#"Utilisez la commande /welcomer reload pour recharger"#

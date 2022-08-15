@@ -1,0 +1,49 @@
+config:
+
+  Welcome-screen-message: "Welcome to my server"
+
+  Join-messageall-message: " has joined"
+
+  Welcome-screen-sub-message: "%player%"
+
+  First-join-message: " just joined this server for the first time!"
+
+  Join-player-message: "&a%player% join in the server"
+
+  Join-chat-message:
+    - "&m                               "
+    - "&2&lWelcome to Server %player%"
+    - "&c&lDiscord: Your Discord Link"
+    - "&c&lStore: Your Store link "
+    - "&m                               "
+
+  Death-message: "%player% &5Sold his soul to a Creeper"
+
+  Leave-chat-message: "&c%player% leave the server"
+
+ #--------------------System Messages----------------------#
+
+  version: "The plugin version Is:  "
+
+  error: ": This Command does not exist!"
+
+  help: "Show all commands"
+
+  help1: "Show the plugin version"
+
+  help2: "Use /welcomer help for help XD"
+
+  help3: "Use to reload the config"
+
+  available: "There is a new version available. "
+
+  download: "You can download it at: "
+
+  reload: " The config has been reloaded"
+
+
+  #"You can set the timeout in ticks for particles."#
+  #"You can set colors with the & sign and assign numeric value colors"#
+  #"join in this link for more: https://minecraft.tools/en/color-code.php"#
+  #"The %player% identific the player name"#
+  #"Use the command /welcomer reload to reload"*\#"

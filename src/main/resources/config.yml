@@ -1,72 +1,52 @@
 config:
 
+  #Set Language for the plugin
+  # Available languages: en_En - es_Es - fr_Fr
+  Lang: "en_En"
+
+  #Welcome message true/false
   Message-Welcome: true
 
+  #Leave message true/false
   Leave-message: true
 
+  #Join message true/false
   Join-message: true
 
+  #Join message for all true/false
   Join-messageall: true
 
+  #Join Particle true/false
   Join-particle: true
 
+  #First Join message true/false
   First-join: true
 
+  #Join Sound true/false
   Join-Sound: true
 
+  #Death message true/false
   Death: true
 
-  Welcome-screen-message: "Welcome to my server"
-
-  Join-messageall-message: " has joined"
-
-  Welcome-screen-sub-message: "%player%"
-
-  First-join-message: " just joined this server for the first time!"
-
+  #Join particle
   Join-particle-select: FLAME
 
+  #Join sound
   Join-sound-select: ENTITY_WITHER_SPAWN
 
-  Join-player-message: "&a%player% join in the server"
 
-  Join-chat-message:
-    - "&m                     "
-    - "&2&lWelcome to Server %player%"
-    - "&c&lDiscord: Your Discord Link"
-    - "&c&lStore: Your Store link "
-    - "&m         "
-
-  Death-message: "%player% &5Sold his soul to a Creeper"
-
+  #Join Commanns <-add commands>
   Join-Commands:
     - ""
 
+  #Join particle tick speed
   Particle-ticks: 21
 
-  Leave-chat-message: "&c%player% leave the server"
+  #"You can set the timeout in ticks for particles."#
+  #"You can set colors with the & sign and assign numeric value colors"#
+  #"join in this link for more: https://minecraft.tools/en/color-code.php"#
+  #"The %player% identific the player name"#
+  #"Use the command /welcomer reload to reload"*\#"
 
-  #--------------------System Messages----------------------#
-
-  version: "The plugin version Is:  "
-
-
-  help: "The plugin commands are: "
-
-  error: ": This Command does not exist!"
-
-  help2: "Use /welcomer help for help XD"
-
-  available: "There is a new version available. "
-
-  download: "You can download it at: "
-
-
-#"You can set the timeout in ticks for particles."#
-#"You can set colors with the & sign and assign numeric value colors"#
-#"join in this link for more: https://minecraft.tools/en/color-code.php"#
-#"The %player% identific the player name"#
-#"Use the command /welcomer reload to reload"*\#"
-#puta
 
 
